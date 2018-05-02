@@ -21,7 +21,7 @@ implementation 'com.github.Cilenco:LiveAdapter:1.0.0'
 ## How to use this library
 
 ### 1. Implement your item
-Implement your item as simple POJO class which implement `IViewItem`. For a default implementation you can also extend the `ViewItem` class. To use a simplified adapter class make sure to implement the `Compareable<T>` interface.
+Implement your item as simple POJO class which implement `IViewItem`. For a default implementation you can also extend the `ViewItem` class.
 
 ```java
 public class Book extends ViewItem<Book> {

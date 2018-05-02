@@ -1,11 +1,30 @@
 # LiveAdapter
+LiveAdapter is a library which helps you to keep your `RecylcerView` and the items within it up to date. Simply add and remove items to the list and the UI is updated automagicly includeing animations. You never have to call a single `notify...Changed()` method again.
 
+The library respects the Android [lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) and was created due to [this question](https://stackoverflow.com/questions/48336448/observe-add-and-remove-events-from-arraylist) on Stack Overflow. It's very easy to use and has some nice additinal features like filtering, a better `RecylcerView` and some material design resources. On the other hand you implement your Adapter like you always would do so you are free to implement anything you want.
+
+## How to include into your project
+Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+    repositories {
+        // ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Add this to your project dependencies:
+```
+implementation 'com.github.Cilenco:LiveAdapter:1.0.0'
+```
+## How to use this library
 
 ### 1. Implement your item
-Implement your item as simple POJO class. To use a simplified adapter class make sure to implement the `Compareable<T>` interface.
+Implement your item as simple POJO class which implement `IViewItem`. For a default implementation you can also extend the `ViewItem` class. To use a simplified adapter class make sure to implement the `Compareable<T>` interface.
 
 ```java
-public class Book implements Comparable<Book> {
+public class Book extends ViewItem<Book> {
     public String title;
     public String author;
 

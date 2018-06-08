@@ -34,8 +34,8 @@ public abstract class OneLineAdapter<T extends IViewItem<T>> extends SimpleBaseA
     protected abstract View createActionView(LayoutInflater inflater, ViewGroup container);
 
     protected class OneLineHolder extends BaseAdapter.SimpleViewHolder {
-        protected TextView title;
-        protected ImageView icon;
+        public TextView title;
+        public ImageView icon;
 
         public OneLineHolder(View itemView) {
             super(itemView);

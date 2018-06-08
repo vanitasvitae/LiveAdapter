@@ -31,9 +31,9 @@ public abstract class OneLineAdapter<T extends IViewItem<T>> extends SimpleBaseA
         return new OneLineHolder(itemView);
     }
 
-    protected abstract View createActionView();
+    protected abstract View createActionView(LayoutInflater inflater, ViewGroup container);
 
-    class OneLineHolder extends BaseAdapter.SimpleViewHolder {
+    protected class OneLineHolder extends BaseAdapter.SimpleViewHolder {
         protected TextView title;
         protected ImageView icon;
 
@@ -43,11 +43,14 @@ public abstract class OneLineAdapter<T extends IViewItem<T>> extends SimpleBaseA
             title = itemView.findViewById(R.id.title);
             icon = itemView.findViewById(R.id.icon);
 
-            View actionView = createActionView();
-            if(actionView == null) return;
-
+            LayoutInflater inflater = LayoutInflater.from(itemView.getContext());
             LinearLayout actionHolder = itemView.findViewById(R.id.action_holder);
-            actionHolder.addView(actionView, MATCH_PARENT, MATCH_PARENT);
+
+            View actionView = createActionView(inflater, actionHolder);
+            if(actionView == null) return; // No action view for item
+
+            actionHolder.addView(actionView);
+            actionView.setOnClickListener(this);
         }
     }
 }

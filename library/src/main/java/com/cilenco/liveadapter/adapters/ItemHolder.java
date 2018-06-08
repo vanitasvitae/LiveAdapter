@@ -44,8 +44,7 @@ public class ItemHolder<V extends IViewItem<V>> extends Filter implements Lifecy
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    protected void onStop() {
-        Log.d("SimpleAdapter", "ON_STOP");
+    protected void onDestroy() {
         originalItems.removeOnListChangedCallback(listener);
     }
 

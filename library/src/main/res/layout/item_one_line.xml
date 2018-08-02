@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?selectableItemBackground"
     android:minHeight="56dp"
-    android:paddingEnd="?listPreferredItemPaddingRight"
-    android:paddingRight="?listPreferredItemPaddingRight"
-    android:paddingStart="?listPreferredItemPaddingLeft"
-    android:paddingLeft="?listPreferredItemPaddingLeft">
+    android:paddingEnd="?android:attr/listPreferredItemPaddingRight"
+    android:paddingRight="?android:attr/listPreferredItemPaddingRight"
+    android:paddingStart="?android:attr/listPreferredItemPaddingLeft"
+    android:paddingLeft="?android:attr/listPreferredItemPaddingLeft">
 
     <ImageView
         android:id="@+id/icon"

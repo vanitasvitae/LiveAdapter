@@ -6,15 +6,14 @@ import android.arch.lifecycle.OnLifecycleEvent;
 import android.databinding.ObservableList;
 import android.databinding.ObservableList.OnListChangedCallback;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Filter;
 
-import com.cilenco.liveadapter.utils.IViewItem;
+import com.cilenco.liveadapter.model.IViewItem;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class ItemHolder<V extends IViewItem<V>> extends Filter implements LifecycleObserver {
+public class ItemHolder<V extends IViewItem> extends Filter implements LifecycleObserver {
     private BaseAdapter<V,?> adapter;
     private Predicate<V> predicate;
 
@@ -34,7 +33,6 @@ public class ItemHolder<V extends IViewItem<V>> extends Filter implements Lifecy
         listener = new ItemListener<>();
 
         originalItems.addOnListChangedCallback(listener);
-        publishResults(lastQuery, performFiltering(lastQuery));
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)

@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilenco.liveadapter.R;
-import com.cilenco.liveadapter.utils.IViewItem;
+import com.cilenco.liveadapter.model.IViewItem;
 
-public abstract class TwoLineAdapter<T extends IViewItem<T>> extends SimpleBaseAdapter<T, TwoLineAdapter.TwoLineHolder> {
+public abstract class TwoLineAdapter<T extends IViewItem> extends SimpleBaseAdapter<T, TwoLineAdapter.TwoLineHolder> {
 
     public TwoLineAdapter(LifecycleOwner lcOwner, ObservableList<T> items, Class<T> itemClass) {
         super(lcOwner, items, itemClass);

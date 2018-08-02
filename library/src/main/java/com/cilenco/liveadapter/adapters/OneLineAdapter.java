@@ -12,11 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilenco.liveadapter.R;
-import com.cilenco.liveadapter.utils.IViewItem;
+import com.cilenco.liveadapter.model.IViewItem;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-
-public abstract class OneLineAdapter<T extends IViewItem<T>> extends SimpleBaseAdapter<T, OneLineAdapter.OneLineHolder> {
+public abstract class OneLineAdapter<T extends IViewItem> extends SimpleBaseAdapter<T, OneLineAdapter.OneLineHolder> {
 
     public OneLineAdapter(LifecycleOwner lcOwner, ObservableList<T> items, Class<T> itemClass) {
         super(lcOwner, items, itemClass);

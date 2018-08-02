@@ -35,10 +35,13 @@ ext {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:support-v4:$supportLibraryVersion"
+    api "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    api "com.android.support:appcompat-v7:$supportLibraryVersion"
+    api "com.android.support:support-v4:$supportLibraryVersion"
+    api "android.arch.lifecycle:extensions:1.1.1"
 
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    api group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+
+
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 }

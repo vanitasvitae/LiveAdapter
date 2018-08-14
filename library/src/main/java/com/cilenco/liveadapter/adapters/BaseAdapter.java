@@ -281,8 +281,14 @@ public abstract class BaseAdapter<T extends IViewItem, VH extends BaseAdapter.Si
         holder.itemView.setSelected(item.isSelected());
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return getLayoutIdForPosition(position);
+    }
+
     protected abstract boolean areItemsTheSame(T item1, T item2);
     protected abstract boolean areItemContentsTheSame(T item1, T item2);
+    protected abstract int getLayoutIdForPosition(int position);
 
     public abstract class SimpleViewHolder extends ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 

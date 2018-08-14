@@ -22,9 +22,14 @@ public abstract class TwoLineAdapter<T extends IViewItem> extends SimpleBaseAdap
     @Override @NonNull
     public TwoLineHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.item_two_line, parent, false);
+        View itemView = inflater.inflate(viewType, parent, false);
 
         return new TwoLineHolder(itemView);
+    }
+
+    @Override
+    protected int getLayoutIdForPosition(int position) {
+        return R.layout.item_two_line;
     }
 
     protected abstract View createActionView(LayoutInflater inflater, ViewGroup container);
